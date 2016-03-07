@@ -5,71 +5,41 @@
  */
 package com.mycompany.examserver.model;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Loki
  */
+@Entity
 @XmlRootElement
 public class Question {
-    private int questionID;
+    @Id @GeneratedValue
+    private int id;
     private String question;
     private int courseId;
-    private String answer;
-    private String wrong1;
-    private String wrong2;
-    private String wrong3;
+    //private String answer;
+    //private String wrong1;
+    //private String wrong2;
+    //private String wrong3;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy ="question")
+    private Collection<Answer>answer= new ArrayList<Answer>();
 
-    public Question(int courseId, int questionID, String question, String answer,String wrong1, String wrong2, String wrong3 ){
-        this.courseId = courseId;
-        this.questionID = questionID;
-        this.question = question;
-        this.answer = answer;
-        this.wrong1 = wrong1;
-        this.wrong2 = wrong2;
-        this.wrong3 = wrong3;
-        
-    }
-
-    public Question(Question q) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public String getWrong1() {
-        return wrong1;
-    }
-
-    public void setWrong1(String wrong1) {
-        this.wrong1 = wrong1;
-    }
-
-    public String getWrong2() {
-        return wrong2;
-    }
-
-    public void setWrong2(String wrong2) {
-        this.wrong2 = wrong2;
-    }
-
-    public String getWrong3() {
-        return wrong3;
-    }
-
-    public void setWrong3(String wrong3) {
-        this.wrong3 = wrong3;
-    }
-   
-        
-    public String getAnswer() {
+    public Collection<Answer> getAnswer() {
         return answer;
     }
 
-    public void setAnswer(String answer) {
+    public void setAnswer(Collection<Answer> answer) {
         this.answer = answer;
     }
     
+        
+    public Question(){
+        
+    }
 
     public int getCourseId() {
         return courseId;
@@ -79,18 +49,12 @@ public class Question {
         this.courseId = courseId;
     }
     
-
-    
-    public Question(){
-        
+    public int getId() {
+        return id;
     }
 
-    public int getQuestionID() {
-        return questionID;
-    }
-
-    public void setQuestionID(int questionID) {
-        this.questionID = questionID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getQuestion() {
@@ -100,4 +64,52 @@ public class Question {
     public void setQuestion(String question) {
         this.question = question;
     }
+
+//    public Question(int courseId, int id, String question, String answer,String wrong1, String wrong2, String wrong3 ){
+//        this.courseId = courseId;
+//        this.id = id;
+//        this.question = question;
+//        this.answer = answer;
+//        this.wrong1 = wrong1;
+//        this.wrong2 = wrong2;
+//        this.wrong3 = wrong3;
+//        
+//    }
+
+
+
+//    public String getWrong1() {
+//        return wrong1;
+//    }
+//
+//    public void setWrong1(String wrong1) {
+//        this.wrong1 = wrong1;
+//    }
+//
+//    public String getWrong2() {
+//        return wrong2;
+//    }
+//
+//    public void setWrong2(String wrong2) {
+//        this.wrong2 = wrong2;
+//    }
+//
+//    public String getWrong3() {
+//        return wrong3;
+//    }
+//
+//    public void setWrong3(String wrong3) {
+//        this.wrong3 = wrong3;
+//    }
+//   
+//        
+//    public String getAnswer() {
+//        return answer;
+//    }
+//
+//    public void setAnswer(String answer) {
+//        this.answer = answer;
+//    }
+    
+
 }

@@ -15,6 +15,7 @@ import com.mycompany.examserver.service.QuestionServices;
 import java.util.List;
 import javax.ws.rs.BadRequestException;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.POST;
 import javax.ws.rs.PathParam;
 
@@ -40,14 +41,6 @@ public class Questions {
     public Question getQuestion(@PathParam("questionID") int questionID) {
         return questionService.getQuestion(questionID); //ska skrivas i QuestionServices
     }
-
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    public String addQuestion(Question q) {
-        questionService.addQuestion(q);
-
-        return "Ok added question";
-    }
     
     @POST
     @Consumes({MediaType.APPLICATION_JSON})
@@ -56,11 +49,18 @@ public class Questions {
         if (q == null)
             throw new BadRequestException();    
         Question question = questionService.createQuestion(q);
+        System.out.print("added question");
 
         return question;   
    }
     
-
+    @DELETE
+    @Path("/{questionId}") 
+    @Produces({MediaType.APPLICATION_JSON})
+    public void deleteQuestion(@PathParam("questionId") int questionId) {
+        questionService.deleteQuestion(questionId);
+        System.out.println("deleted question");
+    }
     
 
 }

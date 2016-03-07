@@ -55,6 +55,7 @@ public class Courses {
         if (c == null)
             throw new BadRequestException();    
         Course course = courseService.createCourse(c);
+        System.out.println("added course");
         return course;   
    }
 

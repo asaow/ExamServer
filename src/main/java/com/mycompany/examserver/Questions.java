@@ -6,6 +6,7 @@
 
 package com.mycompany.examserver;
 
+import com.mycompany.examserver.database.HibernateQueries;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -39,7 +40,7 @@ public class Questions {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Question getQuestion(@PathParam("questionID") int questionID) {
-        return questionService.getQuestion(questionID); //ska skrivas i QuestionServices
+        return questionService.getQuestion(questionID);
     }
     
     @POST

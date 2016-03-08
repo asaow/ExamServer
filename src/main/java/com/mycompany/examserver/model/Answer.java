@@ -7,6 +7,10 @@ package com.mycompany.examserver.model;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -17,16 +21,17 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Answer {
 
-    @Id
-    @GeneratedValue
+    @Id @GeneratedValue
     private int id;
     private String answer;
     private Boolean correct;
-    private Question question;
 
     public Answer() {
 
     }
+    
+   @ManyToOne
+   private Question question;
 
     public Question getQuestion() {
         return question;

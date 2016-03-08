@@ -5,11 +5,13 @@
  */
 package com.mycompany.examserver.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -19,7 +21,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @XmlRootElement
-public class Answer {
+public class Answer implements Serializable{
 
     @Id @GeneratedValue
     private int id;
@@ -30,7 +32,8 @@ public class Answer {
 
     }
     
-   @ManyToOne
+   @ManyToOne     
+   //@JoinColumn(name="question_Id")
    private Question question;
 
     public Question getQuestion() {

@@ -32,7 +32,7 @@ public class Question implements Serializable {
     //private String wrong2;
     //private String wrong3;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy ="question")
+    @OneToMany(cascade = CascadeType.ALL)//, mappedBy ="question")
     private Collection<Answer>answer= new ArrayList<Answer>();
 
     public Collection<Answer> getAnswer() {

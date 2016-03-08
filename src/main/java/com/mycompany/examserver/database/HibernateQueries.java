@@ -36,9 +36,13 @@ public class HibernateQueries {
         session.beginTransaction();
         
         Question q = (Question)session.get(Question.class, questionId);
-    
+        Collection<Answer> answers =q.getAnswer();
+        for (Answer a:answers){
+            System.out.println(a.getId()+", "+a.getCorrect());
+        }
         session.getTransaction().commit();
         session.close();
+        
         return q;
 
     } 

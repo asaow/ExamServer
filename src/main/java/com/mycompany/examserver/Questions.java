@@ -32,6 +32,7 @@ public class Questions {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Question> getQuestions() {
+        System.out.println("inne i questionssss");
         return questionService.getQuestions();
     }
 

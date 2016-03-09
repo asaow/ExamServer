@@ -27,6 +27,7 @@ HibernateQueries hibernateQueries = new HibernateQueries() ;
     }
 
   public List<Question> getQuestions() {
+      System.out.println("inne i service");
         return hibernateQueries.getQuestions();
 //
     //return null;

@@ -47,12 +47,16 @@ public class HibernateQueries {
 
     } 
        
-        public List getQuestions(){
+        public List<Question>getQuestions(){
         Session session= sessionFactory.openSession();
+        System.out.println("Början av session");
+
         session.beginTransaction();
-        List<Question>questions= session.createCriteria(Question.class).list();    
+        List<Question>questions= session.createCriteria(Question.class).list();
+        System.out.println("size: "+questions.size());
+        System.out.println("after get session");
         session.getTransaction().commit();
-        session.close();
+        //session.close();
         return questions;
 
     } 

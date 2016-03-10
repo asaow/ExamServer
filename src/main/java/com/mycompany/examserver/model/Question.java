@@ -27,21 +27,37 @@ public class Question implements Serializable {
     private int id;
     private String question;
     private int courseId = 1;
-    
-    //private String answer;
-    //private String wrong1;
-    //private String wrong2;
-    //private String wrong3;
+    public static final String RADIO_TYPE = "ETT SVAR";
+    public static final String CHECKBOX_TYPE = "FLERA SVAR";
+    private String type;
 
-    @OneToMany(cascade = CascadeType.ALL)//, mappedBy ="question")
-    private Collection<Answer>answer= new ArrayList<Answer>();
-
-    public Collection<Answer> getAnswer() {
-        return answer;
+    public String getType() {
+        return type;
     }
 
-    public void setAnswer(Collection<Answer> answer) {
-        this.answer = answer;
+    public void setType(String type) {
+        this.type = type;
+    }
+
+
+    public static String getRADIO_TYPE() {
+        return RADIO_TYPE;
+    }
+
+    public static String getCHECKBOX_TYPE() {
+        return CHECKBOX_TYPE;
+    }
+
+
+    @OneToMany(cascade = CascadeType.ALL)//, mappedBy ="question")
+    private Collection<Answer>answers= new ArrayList<Answer>();
+
+    public Collection<Answer> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(Collection<Answer> answers) {
+        this.answers = answers;
     }
     
         

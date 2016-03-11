@@ -10,8 +10,10 @@ import com.mycompany.examserver.model.Question;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import static org.hibernate.hql.internal.antlr.HqlSqlTokenTypes.FROM;
 
 /**
  *
@@ -54,6 +56,9 @@ public class HibernateQueries {
 
         session.beginTransaction();
         List<Question> questions = session.createCriteria(Question.class).list();
+        for (Question q : questions){
+            q.getAnswers();
+        }
         System.out.println("size: " + questions.size());
         System.out.println("after get session");
         session.getTransaction().commit();
@@ -79,12 +84,13 @@ public class HibernateQueries {
         SessionFactory sessionFactory = MyHibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        
+
         Question q = (Question) session.get(Question.class, questionId);
         session.delete(q);
-        
+
         session.getTransaction().commit();
         session.close();
     }
+
 
 }

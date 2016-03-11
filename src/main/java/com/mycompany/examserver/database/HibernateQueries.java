@@ -7,13 +7,10 @@ package com.mycompany.examserver.database;
 
 import com.mycompany.examserver.model.Answer;
 import com.mycompany.examserver.model.Question;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import static org.hibernate.hql.internal.antlr.HqlSqlTokenTypes.FROM;
 
 /**
  *
@@ -22,17 +19,6 @@ import static org.hibernate.hql.internal.antlr.HqlSqlTokenTypes.FROM;
 public class HibernateQueries {
 
     SessionFactory sessionFactory = MyHibernateUtil.getSessionFactory();
-
-    public void addQuestion(Question q) {
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-
-        session.save(q);
-
-        session.getTransaction().commit();
-        session.close();
-
-    }
 
     public Question getQuestion(int questionId) {
         Session session = sessionFactory.openSession();

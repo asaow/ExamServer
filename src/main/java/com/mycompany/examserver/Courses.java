@@ -6,7 +6,6 @@
 package com.mycompany.examserver;
 
 import com.mycompany.examserver.model.Course;
-import com.mycompany.examserver.model.Question;
 import com.mycompany.examserver.service.CourseServices;
 import java.util.List;
 import javax.ws.rs.BadRequestException;

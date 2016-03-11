@@ -6,7 +6,6 @@
 package com.mycompany.examserver.service;
 
 import com.mycompany.examserver.model.Course;
-import com.mycompany.examserver.model.Question;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,19 +18,13 @@ public class CourseServices {
     List<Course> courseList;
 
     public CourseServices() {
-        Course c1 = new Course(1, "EFF", 1);
-        Course c2 = new Course(2, "OOP", 2);
-        Course c3 = new Course(3, "HAJ", 3);
 
         courseList = new ArrayList();
-        courseList.add(c1);
-        courseList.add(c2);
-        courseList.add(c3);
 
     }
 
     public List<Course> getCourses() {
-        
+
         return courseList;
 
     }

@@ -50,20 +50,20 @@ HibernateQueries hibernateQueries = new HibernateQueries() ;
         
   }
 
- public void addQuestion(Question q) {
+// public void addQuestion(Question q) {
 //        HibernateQueries hq = new HibernateQueries();
 //        q = new Question();
 //        q.setQuestion("en fråga");
 //        System.out.println("Det funkar!" + q.getQuestion());
 //        hq.addQuestion(q);
 //        //questionList.add(q);
-          hibernateQueries.addQuestion(q);
+//          hibernateQueries.addQuestion(q);
 
-  }
+//  }
 
-    public void removeQuestion(Question q) {
-        questionList.remove(q);
-    }
+//    public void removeQuestion(Question q) {
+//        questionList.remove(q);
+//    }
 
     
     
@@ -77,8 +77,8 @@ public Question createQuestion(Question q){
  }
     
    public void deleteQuestion(int questionId ) {
-        questionList = getQuestions();
-        questionList.remove(questionId);
+       hibernateQueries.deleteQuestion(questionId);
+
    }
 
 }

@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Loki
+ * @author Grupp 2
  */
 @XmlRootElement
 public class Course {

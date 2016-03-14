@@ -21,7 +21,7 @@ import javax.ws.rs.PathParam;
 
 /**
  *
- * @author Loki
+ * @author Grupp 2
  */
 @Path("/")
 public class Questions {

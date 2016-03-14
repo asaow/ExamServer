@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Loki
+ * @author Grupp 2
  */
 @Entity
 @XmlRootElement

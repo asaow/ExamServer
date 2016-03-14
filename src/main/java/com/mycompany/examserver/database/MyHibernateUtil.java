@@ -12,7 +12,7 @@ import org.hibernate.cfg.Configuration;
 
 /**
  *
- * @author Loki
+ * @author Grupp 2
  */
 public class MyHibernateUtil {
 

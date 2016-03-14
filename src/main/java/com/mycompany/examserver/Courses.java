@@ -19,7 +19,7 @@ import javax.ws.rs.core.MediaType;
 
 /**
  *
- * @author Loki
+ * @author Grupp 2
  */
 
 @Path("/courses")

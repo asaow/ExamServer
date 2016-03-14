@@ -14,7 +14,7 @@ import org.hibernate.SessionFactory;
 
 /**
  *
- * @author Loki
+ * @author Grupp 2
  */
 public class HibernateQueries {
 

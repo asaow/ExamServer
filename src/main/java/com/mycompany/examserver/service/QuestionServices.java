@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  *
- * @author Loki
+ * @author Grupp 2
  */
 public class QuestionServices {
 
